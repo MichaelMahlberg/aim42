@@ -20,7 +20,7 @@ determining their *value* (that's why we call this activity *evaluate*):
 * Determine Problem Cost
 * Estimate Remedy Cost
 * Failure Mode And Effect Analysis
-* Impact Analysis
+* <<Impact-Analysis>>
 * Separate Cause From Effect
 
 

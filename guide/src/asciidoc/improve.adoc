@@ -36,7 +36,6 @@ In our opinion, several refactoring patterns are especially important:
 * <<Facade>>
 * <<Group-Improvement-Actions>>
 * <<Handle-If-Else-Chains>>
-* <<Impact-Analysis>>
 * <<Improve-Code-Layout>>
 * <<Introduce-Boy-Scout-Rule>>
 * <<interface-segregation-principle, Interface Segregation Principle>>
