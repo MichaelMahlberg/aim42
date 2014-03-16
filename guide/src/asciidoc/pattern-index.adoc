@@ -15,6 +15,9 @@ ATAM:: Architecture Tradeoff Analysis Method. Systematic approach to find archit
 Architecture-Backlog:: Keep a prioritized list of improvement tasks (_remedies_) with their
 as a backlog, parallel to the (regular) feature backlog. 
 Category: <<Improve>>
+// TODO: This is not quite in line with the ideas Gernot sketched out about
+// having a shared document containing issues and improvement tasks. This shold
+// be addressed somehow IMHO -MM 2014-03-16
 +
 
 . [[Architecture-Documentation]]
@@ -37,9 +40,8 @@ Branch for Improvement:: Introduce distinct branches in your version control sys
 Category: <<Improve>>
 +
 
-. [[Capture-Quality-Requirements]]
-Capture Quality Requirements::
-Part of [[ATAM]], Capture and document specific quality requirements. See <<Requirements-Analysis>>. 
+. *<<Capture-Quality-Requirements, Capture Quality Requirements>>*
+Part of [[ATAM]], Capture and document specific quality requirements. Specialisation of <<Requirements-Analysis>>. 
 Category: <<Analyze>>
 +
 
@@ -53,12 +55,17 @@ Change by Copy:: Isolate competing change necessity by copying and allowing the 
 Category: <<Improve>>
 +
 
+
 . *<<collect-opportunities-for-improvement, Collect Opportunities for Improvement>>*
 +
-Look for measures, remedies, tactics, strategies for improvements. 
+Keep a list of possible and potential measures, remedies, tactics, strategies for improvements. Regularly match those to your <<collect-problems, collection of problems>>.
 Category: <<Crosscutting>>
 +
 
+. *<<collect-problems, Collect Problems>>*
++
+Keep a list of problems, issues and risks. Regularly match those to your <<collect-opportunities-for-improvement, collection of possible remedies>>.
+Category: <<Crosscutting>> 
 
 . [[Context-Analysis]]
 Context Analysis:: Analyse external interfaces for risk, technology, business value and other factors.
@@ -89,11 +96,6 @@ Determine the (monetary) value of a given feature.
 Category: <<Evaluate>>
 +
 
-. [[Determine-Problem-Cost]]
-Determine Problem Cost:: Determine how much a given problem costs (in money or effort) in a period of time. 
-Category: <<Evaluate>>
-+
-
 . [[Development-Process-Analysis]]
 Development Process Analysis:: Analyse and inspect the development process (as documented or described by stakeholders) for appropriateness, problems or problem-areas.
 Category: <<Analyze>>
@@ -108,6 +110,12 @@ Category: <<Analyze>>
 . [[Document-Problems]] 
 Document Problems:: See <<improvement-backlog, Improvement Backlog>>.
 Category: <<Crosscutting>>
++
+
+
+. [[Estimate-Problem-Cost]]
+Estimate Problem Cost:: Estimate how much a given problem costs (in money or effort) in a period of time or a frequency. 
+Category: <<Evaluate>>
 +
 
 . [[Estimate-Remedy-Cost]]
@@ -176,6 +184,14 @@ Category: <<Improve>>
 + 
 Keep a backlog of possible improvements, remedies, tactics or strategies.
 Category: <<Crosscutting>>
++
+
+
+. [[Instrument-System]]
+Instrument-System:: Instrument either the executable or the source code to make 
+<<Explicit-Assumption, assumtions explicit>> and expand on <<runtime analysis>> and 
+<<runtime artifact analysis>>. 
+Category: <<Analyze>>
 +
 
 . *<<interface-segregation-principle, Interface Segregation>>*
@@ -259,7 +275,7 @@ Profiling:: Measure resource consumption of a system during its operation.
 Category: <<Analyze>>
 +
 
-. [[Qualitative-Analysis]]
+. *<<Qualitative-Analysis, Qualitative Analysis>>*
 Qualitative Analysis:: See <<Quality-Requirements>>
 Category: <<Analyze>>
 +
@@ -316,6 +332,8 @@ Category: <<Analyze>>
 . [[Runtime-Artifact-Analysis]]
 Runtime-Artifact Analysis:: (aka Log-Analysis, Trace-Analysis, Protocol-Analysis) Inspect artifacts created at runtime (e.g. logfiles, protocolls, system-traces) for information about problems, root-causes or system behavior.
 Category: <<Analyze>>
+// TODO: perhaps Log-Anasysis deserves a separate entry? Especially in security
+// sensitiv environments? MM 2014-03-16 
 +
 
 . [[Sample-For-Improvement]]

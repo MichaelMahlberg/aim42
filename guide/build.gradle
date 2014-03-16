@@ -3,22 +3,29 @@
 // free software - without guarantee, use at your own risk
 // ========================================================
 
+
 buildscript {
+    // these are the BUILDSCRIPT deps - required to execute
+    // build targets and -operations
     repositories {
         maven {
             name 'Bintray Asciidoctor repo'
             url  'http://dl.bintray.com/content/aalmiray/asciidoctor'
         }
         jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:0.7.0'
+        classpath( 'org.asciidoctor:asciidoctor-gradle-plugin:0.7.0' ) 
+        
     }
 }
 
-apply plugin: 'asciidoctor'
 
+
+// =========== asciidoctor stuff ===============
+apply plugin: 'asciidoctor'
 
 asciidoctor {
     outputDir = new File("$buildDir/docs")
@@ -54,9 +61,8 @@ task copyImages(
 task aim42(
     dependsOn: [copyImages, asciidoctor],
     description: 'collects all required tasks for creating aim42 documentation'
-) << {
-  
-}
+) << { }
+
 
 task publish(type: GradleBuild) {
     if (System.getenv('GH_TOKEN') != '') {
@@ -66,3 +72,33 @@ task publish(type: GradleBuild) {
         println 'env var GH_TOKEN not set, won\'t publish!'
     }
 }
+
+
+// ============ validation with junit/htmlunit
+
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  testCompile 'net.sourceforge.htmlunit:htmlunit:2.8' 
+                   
+  testCompile localGroovy()
+  testCompile 'junit:junit:4.+'
+}
+
+test.dependsOn "aim42"
+    
+sourceSets {
+
+    test {
+        groovy {
+            srcDirs = ['test/']
+        }
+    }
+}
+
+
+
